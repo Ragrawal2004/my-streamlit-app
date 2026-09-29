@@ -1,0 +1,35 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	parse_request(parse_request)
+	load_profile(load_profile)
+	financial_health(financial_health)
+	goal_calculation(goal_calculation)
+	ml_prediction(ml_prediction)
+	risk_analysis(risk_analysis)
+	recommendation(recommendation)
+	explanation(explanation)
+	report(report)
+	error(error)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> parse_request;
+	explanation --> report;
+	financial_health --> goal_calculation;
+	goal_calculation --> ml_prediction;
+	load_profile -.-> error;
+	load_profile -. &nbsp;ok&nbsp; .-> financial_health;
+	ml_prediction --> risk_analysis;
+	parse_request -.-> error;
+	parse_request -. &nbsp;ok&nbsp; .-> load_profile;
+	recommendation --> explanation;
+	risk_analysis --> recommendation;
+	error --> __end__;
+	report --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
+

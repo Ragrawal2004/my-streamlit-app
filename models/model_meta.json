@@ -1,0 +1,151 @@
+{
+  "selected_model": "Logistic Regression",
+  "selection_rule": "highest CV ROC-AUC; ties within 0.01 go to the more interpretable model",
+  "features": [
+    "Age",
+    "Monthly_Income",
+    "Expense_Ratio",
+    "Digital_Payment_Frequency",
+    "Average_Transaction_Amount",
+    "Impulse_Spending_Score",
+    "Investment_Amount",
+    "Goal_Amount",
+    "Goal_Time_Period_Months",
+    "Required_Monthly",
+    "Log_Capacity_Coverage",
+    "Log_Committed_Coverage",
+    "Financial_Goal"
+  ],
+  "cv_train": {
+    "Logistic Regression": {
+      "accuracy": 0.8137,
+      "precision": 0.8087,
+      "recall": 0.8225,
+      "f1": 0.8143,
+      "roc_auc": 0.9052,
+      "roc_auc_std": 0.014
+    },
+    "Decision Tree": {
+      "accuracy": 0.7975,
+      "precision": 0.7967,
+      "recall": 0.8,
+      "f1": 0.797,
+      "roc_auc": 0.8592,
+      "roc_auc_std": 0.0203
+    },
+    "Random Forest": {
+      "accuracy": 0.8125,
+      "precision": 0.8026,
+      "recall": 0.83,
+      "f1": 0.8143,
+      "roc_auc": 0.8964,
+      "roc_auc_std": 0.0204
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.8187,
+      "precision": 0.8116,
+      "recall": 0.8325,
+      "f1": 0.8203,
+      "roc_auc": 0.8933,
+      "roc_auc_std": 0.0165
+    }
+  },
+  "holdout_test": {
+    "accuracy": 0.83,
+    "precision": 0.83,
+    "recall": 0.83,
+    "f1": 0.83,
+    "roc_auc": 0.9004,
+    "confusion_matrix": [
+      [
+        83,
+        17
+      ],
+      [
+        17,
+        83
+      ]
+    ]
+  },
+  "n_train": 800,
+  "n_test": 200,
+  "ablation": {
+    "cv_auc_with_payment_method_added": 0.9038,
+    "cv_auc_payment_method_only": 0.5521,
+    "holdout_auc_capacity_coverage_only": 0.844
+  },
+  "coefficients": [
+    {
+      "feature": "Goal_Amount",
+      "coef": -2.5548
+    },
+    {
+      "feature": "Monthly_Income",
+      "coef": 1.2698
+    },
+    {
+      "feature": "Impulse_Spending_Score",
+      "coef": -0.6884
+    },
+    {
+      "feature": "Financial_Goal_Travel",
+      "coef": 0.4994
+    },
+    {
+      "feature": "Expense_Ratio",
+      "coef": -0.4807
+    },
+    {
+      "feature": "Financial_Goal_Retirement",
+      "coef": -0.4624
+    },
+    {
+      "feature": "Digital_Payment_Frequency",
+      "coef": -0.25
+    },
+    {
+      "feature": "Financial_Goal_Home Purchase",
+      "coef": -0.2309
+    },
+    {
+      "feature": "Required_Monthly",
+      "coef": 0.1772
+    },
+    {
+      "feature": "Average_Transaction_Amount",
+      "coef": -0.1699
+    },
+    {
+      "feature": "Financial_Goal_Emergency Fund",
+      "coef": -0.1644
+    },
+    {
+      "feature": "Financial_Goal_Vehicle",
+      "coef": 0.1643
+    },
+    {
+      "feature": "Log_Committed_Coverage",
+      "coef": 0.1121
+    },
+    {
+      "feature": "Goal_Time_Period_Months",
+      "coef": 0.0918
+    },
+    {
+      "feature": "Age",
+      "coef": -0.0907
+    },
+    {
+      "feature": "Log_Capacity_Coverage",
+      "coef": 0.0715
+    },
+    {
+      "feature": "Investment_Amount",
+      "coef": 0.065
+    },
+    {
+      "feature": "Financial_Goal_Higher Education",
+      "coef": -0.0258
+    }
+  ]
+}
